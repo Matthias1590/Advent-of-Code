@@ -10,11 +10,10 @@ for line in puzzleInput:
         curIndex += 1
 
 def parsePass(passport: str):
-    newPassport = ""
-    passport = passport.replace(" ", "\n")[:-2]
+    passportDict = {}
     for line in passport.splitlines():
-        newPassport += "'" + line.replace(":", "':'") + "',\n"
-    return eval("{" + newPassport + "}")
+        passportDict[line.split(":")[0]] = line.split(":")[1]
+    return passportDict
 
 newPassports = []
 for i in range(len(passports)):
