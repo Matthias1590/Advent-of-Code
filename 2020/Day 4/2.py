@@ -1,4 +1,4 @@
-with open("input.txt", "r") as inputFile:
+with open("Day 4/input.txt", "r") as inputFile:
     puzzleInput = inputFile.readlines(); passports = []
 for i in range(len(puzzleInput)):
     passports.append("")
@@ -10,11 +10,11 @@ for line in puzzleInput:
         curIndex += 1
 
 def parsePass(passport: str):
-    newPassport = ""
+    passportDict = {}
     passport = passport.replace(" ", "\n")[:-2]
     for line in passport.splitlines():
-        newPassport += "'" + line.replace(":", "':'") + "',\n"
-    return eval("{" + newPassport + "}")
+        passportDict[line.split(":")[0]] = line.split(":")[1]
+    return passportDict
 
 newPassports = []
 for i in range(len(passports)):

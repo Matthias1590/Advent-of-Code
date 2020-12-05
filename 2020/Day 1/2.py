@@ -1,4 +1,4 @@
-with open("input.txt", "r") as inputFile:
+with open("Day 1/input.txt", "r") as inputFile:
     puzzleInput = inputFile.readlines()
 for i in range(len(puzzleInput)):
     for j in range(i, len(puzzleInput)):
