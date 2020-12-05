@@ -11,10 +11,7 @@ for line in puzzleInput:
 
 def parsePass(passport: str):
     passportDict = {}
-<<<<<<< HEAD
     passport = passport.replace(" ", "\n")[:-2]
-=======
->>>>>>> 23138e7cd6654d17906ce118d41ae80680fa6c8a
     for line in passport.splitlines():
         passportDict[line.split(":")[0]] = line.split(":")[1]
     return passportDict
